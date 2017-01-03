@@ -1,0 +1,23 @@
+<contact >
+    <contactid>1</contactid>
+    <firstname>Navya</firstname>
+    <lastname>Patil</lastname>
+    <age>5</age>
+    <phonelist>
+        <phone>
+            <phonenumber>5103293523</phonenumber>
+        </phone>
+        <phone>
+            <phonenumber>5108941329</phonenumber>
+        </phone>
+    </phonelist>
+    <addresslist>
+        <address>
+            <line1>38039 Dundee commons</line1>
+            <city>fremont</city>
+            <state>ca</state>
+            <zipcode>94536</zipcode>
+        </address>
+    </addresslist>
+
+</contact>

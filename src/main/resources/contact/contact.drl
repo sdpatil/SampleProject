@@ -1,0 +1,21 @@
+package rules
+
+import com.test.schema.*;
+
+dialect "java"
+
+rule "Contact First Name is sunil"
+
+    when
+        contact:ContactType (getFirstname() == 'Sunil' )
+    then
+        System.out.println("Found record with first name equal to sunil");
+end
+
+rule "Contact age is invalid"
+
+    when
+        contact:ContactType (getAge() < 18 || getAge() >100 )
+    then
+        System.out.println("Found record with age less than 18 or more than 100");
+end

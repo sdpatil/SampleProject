@@ -23,9 +23,14 @@
             <xs:element type="addressType" name="address" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="errorType">
+        <xs:sequence>
+            <xs:element type="xs:string" name="error"/>
+        </xs:sequence>
+    </xs:complexType>
     <xs:complexType name="errorTypeList">
         <xs:sequence>
-            <xs:element type="addressType" name="address" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="errorType" name="error" maxOccurs="unbounded" minOccurs="0"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="contactType">
@@ -36,6 +41,7 @@
             <xs:element type="xs:int" name="age"/>
             <xs:element type="phonelistType" name="phonelist"/>
             <xs:element type="addresslistType" name="addresslist"/>
+            <xs:element type="errorTypeList" name="errorList" />
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

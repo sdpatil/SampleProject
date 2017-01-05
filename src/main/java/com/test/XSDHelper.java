@@ -9,6 +9,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.io.StringReader;
 import java.io.StringWriter;
 
 /**
@@ -41,6 +42,18 @@ public class XSDHelper {
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
             ContactType contactType = (ContactType)unmarshaller.unmarshal(new File(filePath));
+            return contactType;
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+        return null;
+    }
+    public ContactType parseString(String string){
+        try {
+            JAXBContext jaxbContext = JAXBContext.newInstance(ContactType.class);
+            Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+            ContactType contactType = (ContactType)unmarshaller.unmarshal(new StringReader(string));
             return contactType;
         }catch (Exception ex){
             ex.printStackTrace();
